@@ -22,9 +22,13 @@ module.exports = {
     },
   },
   devServer: {
-    contentBase: path.join(__dirname, './public'),
+    historyApiFallback: true,
+    static: path.join(__dirname, './public'),
+    open: true,
     compress: true,
+    hot: true,
     port: 8564,
+    host: 'localhost',
   },
   output: {
     filename: '[name].bundle.js',
