@@ -36,7 +36,7 @@ describe("App tests", () => {
   it("does not render courselist if logged out", () => {
     const component = shallow(<App />);
 
-    component.setProps({ isLogedIn: false });
+    component.setProps({ isLoggedIn: false });
 
     expect(component.contains(<CourseList />)).toBe(false);
   });
