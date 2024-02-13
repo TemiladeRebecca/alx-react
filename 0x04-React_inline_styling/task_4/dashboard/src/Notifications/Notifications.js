@@ -70,9 +70,8 @@ const opacityAnim = {
 
 const bounceAnim = {
   "0%": { transform: "translateY(0px)" },
-  "33%": { transform: "translateY(-5px)" },
-  "66%": { transform: "translateY(5px)" },
-  "100%": { transform: "translateY(0px)" },
+  "50%": { transform: "translateY(-5px)" },
+  "100%": { transform: "translateY(5px)" },
 };
 
 const styles = StyleSheet.create({
