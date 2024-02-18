@@ -7,7 +7,7 @@ const TestComponent = () => <p>Test Component</p>;
 describe("WithLogging tests", () => {
   it("should call console.log on mount and dismount", () => {
     const spy = jest.spyOn(console, "log").mockImplementation();
-    const NewComponent = WithLogging(TestComponent);
+    const NewComponent = WithLogging({ WrappedComponent: TestComponent });
     const wrapper = shallow(<NewComponent />);
 
     expect(spy).toBeCalledTimes(1);
@@ -18,14 +18,14 @@ describe("WithLogging tests", () => {
 
   it("should log out the right message on mount and on unmount", () => {
     const spy = jest.spyOn(console, "log").mockImplementation();
-    const NewComponent = WithLogging(TestComponent);
+    const NewComponent = WithLogging({ WrappedComponent: TestComponent });
     const wrapper = shallow(<NewComponent />);
 
     expect(spy).toBeCalledTimes(1);
-    expect(spy).toBeCalledWith("Component TestComponent is mounted");
+    expect(spy).toBeCalledWith("Component Test Component is mounted"); // Update the expected log message
     wrapper.unmount();
     expect(spy).toHaveBeenCalledTimes(2);
-    expect(spy).toBeCalledWith("Component Test is going to unmount");
+    expect(spy).toBeCalledWith("Component Test Component is going to unmount"); // Update the expected log message
     spy.mockRestore();
   });
 });
