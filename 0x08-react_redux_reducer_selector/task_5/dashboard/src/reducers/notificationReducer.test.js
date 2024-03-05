@@ -17,19 +17,22 @@ import {
     it('FETCH_NOTIFICATIONS_SUCCESS', function () {
       const action = {
         type: FETCH_NOTIFICATIONS_SUCCESS,
-        data: [
+        notifications: [
           {
             id: 1,
+            isRead: false,
             type: 'default',
             value: 'New course available',
           },
           {
             id: 2,
+            isRead: false,
             type: 'urgent',
             value: 'New resume available',
           },
           {
             id: 3,
+            isRead: false,
             type: 'urgent',
             value: 'New data available',
           },
@@ -77,7 +80,7 @@ import {
           },
           {
             id: 2,
-            isRead: false,
+            isRead: true,
             type: 'urgent',
             value: 'New resume available',
           },
