@@ -57,7 +57,7 @@ describe("rendering components", () => {
   });
 });
 
-describe("when isLoggedIn is true", () => {
+describe("checks when Login is true", () => {
   const wrapper = shallow(<App />);
   expect(wrapper.state().user).toEqual(user);
 
